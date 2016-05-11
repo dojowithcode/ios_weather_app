@@ -8,7 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, WeatherServiceDelegate {
+    
+    let weatherSevice = WeatherService()
     
     
     @IBOutlet weak var tempLabel: UILabel!
@@ -41,6 +43,8 @@ class ViewController: UIViewController {
                 let textField = alert.textFields?[0]
                 print(textField?.text)
                 self.cityLabel.text = textField?.text!
+                let cityName = textField?.text
+                self.weatherSevice.getWeather(cityName!)
         }
         
         alert.addAction(ok)
@@ -57,9 +61,17 @@ class ViewController: UIViewController {
             completion: nil)
     }
     
+    //Mark: - Weather Service Delegate
+    
+    func setWeather() {
+        print("View Controller Set Weather");
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        self.weatherSevice.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
