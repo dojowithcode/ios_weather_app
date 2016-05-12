@@ -27,6 +27,18 @@ class WeatherService {
             let lon = json["coord"]["lon"].double
             let lat  = json["coord"]["lat"].double
             let temp = json["main"]["temp"].double
+            let name = json["name"].string
+            let desc = json["weather"][0]["description"].string
+            
+            let weather = Weather(cityName: name!, temp: temp!, description: desc!)
+            
+            if(self.delegate != nil){
+                
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.delegate?.setWeather(weather)
+                })
+                
+            }
             
             print("Lat: \(lat!) Long: \(lon!) temp: \(temp!)")
             

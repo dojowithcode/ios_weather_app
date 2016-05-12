@@ -66,6 +66,11 @@ class ViewController: UIViewController, WeatherServiceDelegate {
     func setWeather(weather: Weather) {
         print("*** Set Weather")
         print("City: \(weather.cityName) temp: \(weather.temp) description: \(weather.description)")
+        
+        //set labels from weather object
+        cityLabel.text = weather.cityName
+        tempLabel.text = "\(weather.temp)"
+        descriptionLabel.text = weather.description
     }
     
     override func viewDidLoad() {
