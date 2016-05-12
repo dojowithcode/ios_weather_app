@@ -9,7 +9,7 @@
 import Foundation
 
 protocol WeatherServiceDelegate {
-    func setWeather()
+    func setWeather(weather: Weather)
 }
 
 class WeatherService {
@@ -21,9 +21,12 @@ class WeatherService {
         
         //make a request to get weahter data
         //wait...
+        //process data
+        
+        let weather = Weather(cityName: city, temp: 237.12, description: "A nice day")
         
         if delegate != nil {
-            delegate?.setWeather()
+            delegate?.setWeather(weather)
         }
     }
     

@@ -63,8 +63,9 @@ class ViewController: UIViewController, WeatherServiceDelegate {
     
     //Mark: - Weather Service Delegate
     
-    func setWeather() {
-        print("View Controller Set Weather");
+    func setWeather(weather: Weather) {
+        print("*** Set Weather")
+        print("City: \(weather.cityName) temp: \(weather.temp) description: \(weather.description)")
     }
     
     override func viewDidLoad() {
