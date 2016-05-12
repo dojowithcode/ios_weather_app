@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1E1426981CE4B3F8005B5DF6 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1426971CE4B3F8005B5DF6 /* Weather.swift */; };
+		1E14269A1CE4E0CB005B5DF6 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1426991CE4E0CB005B5DF6 /* SwiftyJSON.swift */; };
 		1E43939E1CE229C500335611 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E43939D1CE229C500335611 /* AppDelegate.swift */; };
 		1E4393A01CE229C500335611 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E43939F1CE229C500335611 /* ViewController.swift */; };
 		1E4393A31CE229C500335611 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E4393A11CE229C500335611 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		1E1426971CE4B3F8005B5DF6 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		1E1426991CE4E0CB005B5DF6 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = "../../../../Downloads/SwiftyJSON-master/Source/SwiftyJSON.swift"; sourceTree = "<group>"; };
 		1E43939A1CE229C500335611 /* Weather-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weather-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E43939D1CE229C500335611 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E43939F1CE229C500335611 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				1E43939F1CE229C500335611 /* ViewController.swift */,
 				1E1426971CE4B3F8005B5DF6 /* Weather.swift */,
 				1EBF27CB1CE39549003DBCC3 /* WeatherService.swift */,
+				1E1426991CE4E0CB005B5DF6 /* SwiftyJSON.swift */,
 				1E4393A11CE229C500335611 /* Main.storyboard */,
 				1E4393A41CE229C600335611 /* Assets.xcassets */,
 				1E4393A61CE229C600335611 /* LaunchScreen.storyboard */,
@@ -145,6 +148,7 @@
 				1E1426981CE4B3F8005B5DF6 /* Weather.swift in Sources */,
 				1E4393A01CE229C500335611 /* ViewController.swift in Sources */,
 				1EBF27CC1CE39549003DBCC3 /* WeatherService.swift in Sources */,
+				1E14269A1CE4E0CB005B5DF6 /* SwiftyJSON.swift in Sources */,
 				1E43939E1CE229C500335611 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

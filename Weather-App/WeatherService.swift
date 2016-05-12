@@ -22,7 +22,14 @@ class WeatherService {
         let url  = NSURL(string: path)
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithURL(url!) { (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
-            print(">>>>> \(data)")
+            let json = JSON(data: data!)
+            
+            let lon = json["coord"]["lon"].double
+            let lat  = json["coord"]["lat"].double
+            let temp = json["main"]["temp"].double
+            
+            print("Lat: \(lat!) Long: \(lon!) temp: \(temp!)")
+            
         }
         
         task.resume()
