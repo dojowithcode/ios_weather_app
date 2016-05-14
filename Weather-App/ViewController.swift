@@ -16,6 +16,7 @@ class ViewController: UIViewController, WeatherServiceDelegate {
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var cityButton: UIButton!
     
     
     @IBAction func setCityTapped(sender: UIButton) {
@@ -71,6 +72,8 @@ class ViewController: UIViewController, WeatherServiceDelegate {
         cityLabel.text = weather.cityName
         tempLabel.text = "\(weather.temp)"
         descriptionLabel.text = weather.description
+        self.cityButton.setTitle(weather.cityName, forState: .Normal)
+        
     }
     
     override func viewDidLoad() {
