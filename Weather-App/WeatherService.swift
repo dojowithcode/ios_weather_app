@@ -32,8 +32,9 @@ class WeatherService {
             let name = json["name"].string
             let desc = json["weather"][0]["description"].string
             let icon = json["weather"][0]["icon"].string
+            let clouds = json["clouds"]["all"].double
             
-            let weather = Weather(cityName: name!, temp: temp!, description: desc!, icon: icon!)
+            let weather = Weather(cityName: name!, temp: temp!, description: desc!, icon: icon!, clouds: clouds!)
             
             if(self.delegate != nil){
                 
