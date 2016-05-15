@@ -24,14 +24,14 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7AE-6C-hmF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7AE-6C-hmF">
                                 <rect key="frame" x="20" y="151" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9KY-WY-T3d">
-                                <rect key="frame" x="20" y="222" width="560" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9KY-WY-T3d">
+                                <rect key="frame" x="20" y="321" width="560" height="30"/>
                                 <state key="normal" title="Set City"/>
                                 <connections>
                                     <action selector="setCityTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tIf-du-gHH"/>
@@ -43,6 +43,13 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="09d.png" translatesAutoresizingMaskIntoConstraints="NO" id="Fhd-8I-6Y5">
+                                <rect key="frame" x="193" y="195" width="214" height="104"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="214" id="XVB-2D-GyT"/>
+                                    <constraint firstAttribute="height" constant="104" id="ncz-fi-lWN"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -51,7 +58,11 @@
                             <constraint firstItem="iB1-Qb-uKV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Gqe-Km-jpg"/>
                             <constraint firstItem="iB1-Qb-uKV" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="RtJ-kr-dkw"/>
                             <constraint firstItem="7AE-6C-hmF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Vd2-gI-zZM"/>
+                            <constraint firstItem="9KY-WY-T3d" firstAttribute="top" secondItem="Fhd-8I-6Y5" secondAttribute="bottom" constant="22" id="WNH-Xy-1h6"/>
+                            <constraint firstItem="Fhd-8I-6Y5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="195" id="e6M-cP-U3l"/>
+                            <constraint firstItem="Fhd-8I-6Y5" firstAttribute="top" secondItem="7AE-6C-hmF" secondAttribute="bottom" constant="23" id="f4n-qU-0TW"/>
                             <constraint firstItem="BAv-HX-Ned" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="i32-oZ-hQo"/>
+                            <constraint firstItem="Fhd-8I-6Y5" firstAttribute="centerX" secondItem="7AE-6C-hmF" secondAttribute="centerX" id="oN8-N4-4sj"/>
                             <constraint firstItem="iB1-Qb-uKV" firstAttribute="top" secondItem="BAv-HX-Ned" secondAttribute="bottom" constant="8" id="pDM-x1-MFC"/>
                             <constraint firstItem="9KY-WY-T3d" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="vJ1-es-gcr"/>
                             <constraint firstItem="7AE-6C-hmF" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="xM3-fo-gNa"/>
@@ -62,6 +73,7 @@
                         <outlet property="cityButton" destination="9KY-WY-T3d" id="Tb7-k0-dg5"/>
                         <outlet property="cityLabel" destination="7AE-6C-hmF" id="NJq-lV-7Sf"/>
                         <outlet property="descriptionLabel" destination="iB1-Qb-uKV" id="m2d-hJ-ygP"/>
+                        <outlet property="iconImage" destination="Fhd-8I-6Y5" id="tu3-SX-hpN"/>
                         <outlet property="tempLabel" destination="BAv-HX-Ned" id="pxQ-bp-pOM"/>
                     </connections>
                 </viewController>
@@ -70,4 +82,7 @@
             <point key="canvasLocation" x="380" y="318"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="09d.png" width="555" height="547"/>
+    </resources>
 </document>
