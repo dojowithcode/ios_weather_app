@@ -35,6 +35,17 @@ class WeatherService {
             let json = JSON(data: data!)
             print(json)
             
+            //Get the code which openweather return was 404, 401, or 200
+            //OpenWeatherMap returns 404 as a string but 401 and 200 are Int!?
+            
+            var status = 0
+            
+            if let cod = json["cod"].int {
+                status = cod
+            } else if let cod = json["code"].string{
+                status = Int(cod)!
+            }
+            
             let lon = json["coord"]["lon"].double
             let lat  = json["coord"]["lat"].double
             let temp = json["main"]["temp"].double
