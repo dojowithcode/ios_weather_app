@@ -64,7 +64,6 @@ class ViewController: UIViewController, WeatherServiceDelegate {
     }
     
     //Mark: - Weather Service Delegate
-    
     func setWeather(weather: Weather) {        
         //set labels from weather object
         cityLabel.text = weather.cityName
@@ -74,6 +73,14 @@ class ViewController: UIViewController, WeatherServiceDelegate {
         iconImage.image = UIImage(named: weather.icon)
         cloudsLabel.text = "\(weather.clouds) %"
         
+    }
+    
+    func weahterErrorWithMessage(message: String) {
+        let alert   = UIAlertController(title: "Error", message: message, preferredStyle: .Alert)
+        let ok      = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alert.addAction(ok)
+        
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
