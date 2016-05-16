@@ -27,8 +27,12 @@ class WeatherService {
         let url  = NSURL(string: path)
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithURL(url!) { (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
-            let json = JSON(data: data!)
             
+            if let httpResponse = response as? NSHTTPURLResponse {
+                print(httpResponse.statusCode)
+            }
+            
+            let json = JSON(data: data!)
             print(json)
             
             let lon = json["coord"]["lon"].double
@@ -54,19 +58,6 @@ class WeatherService {
         }
         
         task.resume()
-        
-        
-        //print("Weather Service city: \(city)")
-        
-        //make a request to get weahter data
-        //wait...
-        //process data
-        
-//        let weather = Weather(cityName: city, temp: 237.12, description: "A nice day")
-//        
-//        if delegate != nil {
-//            delegate?.setWeather(weather)
-//        }
     }
     
 }
