@@ -21,7 +21,6 @@ class ViewController: UIViewController, WeatherServiceDelegate {
     @IBOutlet weak var cloudsLabel: UILabel!
     
     @IBAction func setCityTapped(sender: UIButton) {
-        print("City button tapped")
         openCityAlert()
     }
     
@@ -41,9 +40,7 @@ class ViewController: UIViewController, WeatherServiceDelegate {
         //Create ok action
         let ok = UIAlertAction(title: "OK",
             style: UIAlertActionStyle.Default) { (action: UIAlertAction) -> Void in
-                print("OK")
                 let textField = alert.textFields?[0]
-                print(textField?.text)
                 self.cityLabel.text = textField?.text!
                 let cityName = textField?.text
                 self.weatherSevice.getWeather(cityName!)

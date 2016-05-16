@@ -33,7 +33,6 @@ class WeatherService {
             }
             
             let json = JSON(data: data!)
-            print(json)
             
             //Get the code which openweather return was 404, 401, or 200
             //OpenWeatherMap returns 404 as a string but 401 and 200 are Int!?
@@ -46,26 +45,44 @@ class WeatherService {
                 status = Int(cod)!
             }
             
-            let lon = json["coord"]["lon"].double
-            let lat  = json["coord"]["lat"].double
-            let temp = json["main"]["temp"].double
-            let name = json["name"].string
-            let desc = json["weather"][0]["description"].string
-            let icon = json["weather"][0]["icon"].string
-            let clouds = json["clouds"]["all"].double
-            
-            let weather = Weather(cityName: name!, temp: temp!, description: desc!, icon: icon!, clouds: clouds!)
-            
-            if(self.delegate != nil){
+            //Check status
+            if status == 200 {
+                //everything ok
                 
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    self.delegate?.setWeather(weather)
-                })
+                _     = json["coord"]["lon"].double
+                _     = json["coord"]["lat"].double
+                let temp    = json["main"]["temp"].double
+                let name    = json["name"].string
+                let desc    = json["weather"][0]["description"].string
+                let icon    = json["weather"][0]["icon"].string
+                let clouds  = json["clouds"]["all"].double
+                
+                let weather = Weather(cityName: name!, temp: temp!, description: desc!, icon: icon!, clouds: clouds!)
+                
+                if(self.delegate != nil){
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        self.delegate?.setWeather(weather)
+                    })
+                }
+                
+            } else if status == 404 {
+                //city not found
+                
+                if self.delegate != nil {
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        self.delegate?.weahterErrorWithMessage("City not found")
+                    })
+                }
+            } else {
+                //other problems
+                
+                if self.delegate != nil {
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        self.delegate?.weahterErrorWithMessage("Opps! Something went wrong!")
+                    })
+                }
                 
             }
-            
-            print("Lat: \(lat!) Long: \(lon!) temp: \(temp!)")
-            
         }
         
         task.resume()
